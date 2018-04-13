@@ -1,4 +1,6 @@
-package blockchain_package;
+package bali_coin.blockchain;
+
+import bali_coin.utilities.StringUtil;
 
 import java.util.Date;
 

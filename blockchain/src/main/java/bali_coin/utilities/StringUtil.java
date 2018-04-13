@@ -1,6 +1,7 @@
-package blockchain_package;
+package bali_coin.utilities;
 
-import java.security.MessageDigest;
+import java.security.*;
+import java.util.Base64;
 
 public class StringUtil {
     // Applies SHA256 algorithm then returns the result

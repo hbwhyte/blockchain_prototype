@@ -1,4 +1,4 @@
-package bali_coin;
+package bali_coin.wallet;
 
 import java.security.*;
 import java.security.spec.ECGenParameterSpec;

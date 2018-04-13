@@ -1,6 +1,6 @@
 package bali_coin.transactions;
 
-import blockchain_package.StringUtil;
+import bali_coin.utilities.StringUtil;
 
 import java.security.*;
 import java.util.ArrayList;
@@ -43,12 +43,12 @@ public class Transaction {
 
     //Signs all the data we dont wish to be tampered with.
     public void generateSignature(PrivateKey privateKey) {
-        String data = StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(reciepient) + Float.toString(value)	;
+        String data = StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(recipient) + Float.toString(value)	;
         signature = StringUtil.applyECDSASig(privateKey,data);
     }
     //Verifies the data we signed hasnt been tampered with
     public boolean verifiySignature() {
-        String data = StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(reciepient) + Float.toString(value)	;
+        String data = StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(recipient) + Float.toString(value)	;
         return StringUtil.verifyECDSASig(sender, data, signature);
     }
 }
