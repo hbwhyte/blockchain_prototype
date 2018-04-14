@@ -2,8 +2,10 @@ package bali_coin.blockchain;
 
 import java.security.Security;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import bali_coin.transactions.Transaction;
+import bali_coin.transactions.TransactionOutput;
 import bali_coin.utilities.StringUtil;
 import bali_coin.wallet.Wallet;
 import com.google.gson.GsonBuilder;
@@ -14,6 +16,9 @@ public class MyFirstChain {
     public static int difficulty = 5;
     public static Wallet walletA;
     public static Wallet walletB;
+    // List of all unspent transactions
+    public static HashMap<String,TransactionOutput> UTXOs = new HashMap<String,TransactionOutput>();
+
 
     public static void main(String[] args) {
         //Setup Bouncey castle as a Security Provider
