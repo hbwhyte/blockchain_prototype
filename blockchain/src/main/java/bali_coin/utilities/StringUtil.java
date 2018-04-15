@@ -1,6 +1,7 @@
 package bali_coin.utilities;
 
 import bali_coin.transactions.Transaction;
+import com.google.gson.GsonBuilder;
 
 import java.security.*;
 import java.util.ArrayList;
@@ -62,6 +63,16 @@ public class StringUtil {
         return Base64.getEncoder().encodeToString(key.getEncoded());
     }
 
+    //Short hand helper to turn Object into a json string
+    public static String getJson(Object o) {
+        return new GsonBuilder().setPrettyPrinting().create().toJson(o);
+    }
+
+    //Returns difficulty string target, to compare to hash. eg difficulty of 5 will return "00000"
+    public static String getDificultyString(int difficulty) {
+        return new String(new char[difficulty]).replace('\0', '0');
+    }
+
     //Tacks in array of transactions and returns a merkle root.
     public static String getMerkleRoot(ArrayList<Transaction> transactions) {
         int count = transactions.size();
@@ -82,8 +93,4 @@ public class StringUtil {
         return merkleRoot;
     }
 
-    public static String getDificultyString(int difficulty) {
-        // TODO change
-        return "five";
-    }
 }
